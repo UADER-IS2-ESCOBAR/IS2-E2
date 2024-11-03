@@ -6,7 +6,7 @@ from boto3.dynamodb.conditions import Key
 class CorporateLog:
     _instance = None
 
-    # Singleton implementation
+    # Singleton
     def __new__(cls, *args, **kwargs):
         if not cls._instance:
             cls._instance = super(CorporateLog, cls).__new__(cls)

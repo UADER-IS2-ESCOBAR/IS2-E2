@@ -8,7 +8,7 @@ from boto3.dynamodb.conditions import Key
 class CorporateData:
     _instance = None
 
-    # Implementación del patrón Singleton
+    #Singleton
     def __new__(cls, *args, **kwargs):
         if not cls._instance:
             cls._instance = super(CorporateData, cls).__new__(cls)
@@ -58,11 +58,11 @@ class CorporateData:
         return response['Items']
 
 
-# Clase para manejar registros de eventos corporativos
+
 class CorporateLog:
     _instance = None
 
-    # Implementación del patrón Singleton
+    #Singleton
     def __new__(cls, *args, **kwargs):
         if not cls._instance:
             cls._instance = super(CorporateLog, cls).__new__(cls)
@@ -99,7 +99,7 @@ if __name__ == "__main__":
     corporate_data = CorporateData()
     
     # Ejemplo de uso de CorporateData
-    id_sede = "001"
+    id_sede = "FCyT"
     data = corporate_data.getData(id_sede)
     print("Datos de CorporateData:", data)
 
@@ -107,7 +107,7 @@ if __name__ == "__main__":
     corporate_log = CorporateLog()
 
     # Definir valores de prueba
-    uuid_session = str(uuid.uuid4())  # Generar un UUID único
+    uuid_session = str(uuid.uuid4())  
     method_name = "testMethod"
 
     # Llamar al método post para registrar un evento en CorporateLog
